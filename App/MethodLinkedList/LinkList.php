@@ -40,20 +40,41 @@ class LinkList
 
     public function add($index, $obj)
     {
-        $count = 0;
-        $current = $this->firstNode;
-        $node = new Node($obj);
-        while (!is_null($current)) {
-            if ($count == $index) {
-                $beforeCurrent->next = $node;
-                $node->next = $current;
+        if ($index==0){
+            $this->addFirst($obj);
+        }else if ($index >= $this->count){
+            $this->addLast($obj);
+        }else{
+            $current = $this->firstNode;
+            $beforeCurrent = null;
+            $node = new Node($obj);
+            for ($i = 0; $i < $index; $i++) {
+                $beforeCurrent = $current;
+                $current = $current->next;
             }
-            $beforeCurrent = $current;
-            $current = $current->next;
-            $count++;
+            $beforeCurrent->next = $node;
+            $node->next = $current;
         }
     }
 
+    public function delete($index)
+    {
+        if ($index==0){
+
+        }elseif ($index >= $this->count){
+            $this->lastNode->next =null;
+        }else{
+            $current = $this->firstNode;
+            $beforeCurrent = null;
+            $afterCurrent = $current->next;
+            for ($i = 0; $i < $index; $i++) {
+                $beforeCurrent = $current;
+                $current = $current->next;
+                $afterCurrent = $current->next;
+            }
+            $beforeCurrent->next = $afterCurrent;
+        }
+    }
     public function get($index)
     {
         $count = 0;
@@ -76,7 +97,7 @@ class LinkList
     {
         $current = $this->firstNode;
         while (!is_null($current)) {
-            echo $current->readNode()." ";
+            echo $current->readNode() . " ";
             $current = $current->next;
         }
     }
@@ -92,4 +113,5 @@ class LinkList
         }
         return $listData;
     }
+    
 }
