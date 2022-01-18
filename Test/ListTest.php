@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-include_once "App/List/ArrayList.php";
+include_once "../App/List/ArrayList.php";
 
 class ListTest extends TestCase
 {

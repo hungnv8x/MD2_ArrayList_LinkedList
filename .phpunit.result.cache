@@ -1,1 +1,1 @@
-{"version":1,"defects":{"ListTest::testArrayListGet":3,"ListTest::testArrayListGet1":3},"times":{"ListTest::testArrayListGet":0.004,"ListTest::testArrayListGet1":0.004}}
+{"version":1,"defects":{"ListTest::testArrayListGet":3,"ListTest::testArrayListGet1":3,"LinkedListTest::testTotalNodes":4},"times":{"ListTest::testArrayListGet":0.004,"ListTest::testArrayListGet1":0.004,"LinkedListTest::testTotalNodes":0.004,"LinkedListTest::testReadList":0.005}}
